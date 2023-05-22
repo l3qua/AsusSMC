@@ -607,7 +607,7 @@ void AsusSMC::toggleBatteryConservativeMode(bool state) {
         return;
     }
 
-    if (wmi_evaluate_method(ASUS_WMI_METHODID_DEVS, ASUS_WMI_DEVID_RSOC, state ? 80 : 100) != 1) {
+    if (wmi_evaluate_method(ASUS_WMI_METHODID_DEVS, ASUS_WMI_DEVID_RSOC, state ? 59 : 100) != 1) {
         SYSLOG("batt", "Failed to %s battery conservative mode", state ? "enable" : "disable");
     } else {
         DBGLOG("batt", "Battery conservative mode is %s", state ? "enabled" : "disabled");
