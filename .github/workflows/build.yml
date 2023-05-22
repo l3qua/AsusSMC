@@ -9,11 +9,12 @@ on:
 
 env:
   PROJECT_TYPE: KEXT
+  EXCLUDED_ARCHS: arm64e
 
 jobs:
   build:
     name: Build
-    runs-on: macos-latest
+    runs-on: macos-11
     env:
       JOB_TYPE: BUILD
     steps:
@@ -50,7 +51,7 @@ jobs:
 
   analyze-clang:
     name: Analyze Clang
-    runs-on: macos-latest
+    runs-on: macos-11
     env:
       JOB_TYPE: ANALYZE
     steps:
